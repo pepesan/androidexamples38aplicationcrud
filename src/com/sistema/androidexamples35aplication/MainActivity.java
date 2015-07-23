@@ -21,13 +21,18 @@ public class MainActivity extends AppActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		setupViews();
+
+	}
+
+	private void setupViews() {
 		lv=(ListView)findViewById(R.id.listado);
 		adapter=new TestListAdapter(this,
 				R.layout.item,datos);
 		lv.setAdapter(adapter);
 		tv=(TextView)findViewById(R.id.empty);
-
 	}
+
 	public void goAdd(View v){
 		Intent intent=new Intent(this,AddEdit.class);
 		this.startActivity(intent);
